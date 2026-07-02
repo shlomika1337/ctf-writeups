@@ -1,0 +1,12 @@
+*.key
+*.p12
+*.pem
+*.csr
+*.crt
+*.swp
+*.save
+*.bak
+*.apk
+*.exe
+*.so
+*.7z

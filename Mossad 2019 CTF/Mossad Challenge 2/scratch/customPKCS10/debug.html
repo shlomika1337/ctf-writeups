@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script type="text/javascript" src="pkcs10.js"></script>
+	</head>
+
+	<form method="post">
+				<div id="username">
+					<span>Username:</span>
+					<input name="username" type="text">
+				</div>
+				<div id="password">
+					<div>Password:</div>
+					<input name="password" type="password">
+				</div>
+				<div id="submit">
+					<input id="privatekey" name="privatekey" type="hidden">
+					<input id="csr" name="csr" type="hidden">
+					<input type="button" onclick="gencsr()" value="Submit">	
+				</div>
+	</form>
+
+</html>

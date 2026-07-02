@@ -1,0 +1,27 @@
+EncryptSoftware.exe reverse-engineering analysis
+-------------------------------------------------
+- The program uses CryptAcquireContextW(); to verify itself.
+- The program creates an MD5 hash using CryptCreateHash(phHash, 0, 0, 0x8003,
+ phProv); The hash is saved at *phHash.
+- If the hash creation fails, it ends the program.
+- If not, the program then allocs the hash on the Heap.
+- The program then calls GetAdaptersInfo(); and saves the result on var_34.
+- If the program succesfully got the adapter info, it then calls shell
+command "wmic bios get serialnumber", saves the result on file command_result
+and reads the result into var_18
+- If the function didn't fail, it then releases lpMem and sets var_4 to 0.
+- If releasing didn't fail, it then sets var_4 to int
+- var_4 is used as an indicator for int type.
+- EAX is saved on var_18, and then is compared with 0FFFFFFFFh.
+- If cmp eax, 0ffffffffh != 0, it then calls wmic diskdrive get serialnumber:
+* The same actions are performed as with bios serialnumber.
+- If EAX is 0FFFFFFFFh, it jumps to a segment that skips the diskdrive.
+- The funtion then calls CryptHashData(); on hHash and uses EDI to determine
+which data will be added to the hash. EDI contains the 4 first letters of
+the BIOS SERIALNUM and the 4 first digits of the DISKDRIVE SERIALNUM.
+- If it succeeds, the function CryptDerive(); then derives an AES256 key
+using the MD5 hash.
+- The program then attempts to read 16 bytes each time the program loops
+and calls CryptEncrypt(); on the bytes that it read.
+---------------------------------------------------------------
+

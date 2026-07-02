@@ -1,0 +1,30 @@
+# Key material and certificate artifacts - never commit
+*.key
+*.p12
+*.pem
+*.csr
+*.crt
+RSAKEY
+PEMKEY
+CSRKEY
+*-csr
+localkeyid
+
+# Editor / temp junk
+*.swp
+*.swo
+*.save
+*.bak
+*~
+
+# Challenge-provided binaries and decompiled app (not ours to redistribute)
+*.apk
+*.exe
+*.so
+*.dex
+*.7z
+*.arsc
+apk-export/
+
+# Recovered challenge output / flags
+decrypted.txt
