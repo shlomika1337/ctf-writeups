@@ -23,3 +23,4 @@ A steganography chain: decoding Morse from shofar-audio to recover an IP address
 - These document challenges from public recruitment and community CTFs.
 - Challenge-provided binaries and third-party files are not redistributed here; the writeups describe them and link the original source where relevant.
 - Writeup for the Iron Codes 2024 challenge wasn't written. Linkedin post: https://www.linkedin.com/posts/cyberproai-israel_cyber-challenge-cyberweek2024-activity-7212103360814977024-8JO9
+- Huntress CTF 2025 certificate uploaded, didn't compose a write-up.
